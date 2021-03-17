@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>硅谷外卖</title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_518606_6676bmcalnrhehfr.css"></link>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/c.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/4.5.0/css/swiper.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="./css/reset.css">
+<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+<title>
+    <%= htmlWebpackPlugin.options.title %>
+</title>
+</head>
+
+<body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+        <App></App>
+    </div>
     <!-- built files will be auto injected -->
-  </body>
+</body>
+
 </html>
