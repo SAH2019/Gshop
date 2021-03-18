@@ -129,21 +129,28 @@ import Swiper from 'swiper'
 
 export default {
   computed:{
-   ...mapState(['address','Categorys'])
+   ...mapState(['address','categorys'])
   },
   components:{
     Shops,
   } ,
-  mounted() {
-    this.$store.dispatch('getShops')
-    this.$store.dispatch('getCategorys')
-    new Swiper('.swiper-container',{
+  watch:{
+    categorys(){
+      this.$nextTick(function () {
+      new Swiper('.swiper-container',{
         // loop:true,
         pagination:{
          el:'.swiper-pagination'
          /*swiper创建的时机要正确，在列表页面显示之后 */
   }
 })
+      });
+    }
+  },
+  mounted() {
+    this.$store.dispatch('getShops')
+    this.$store.dispatch('getCategorys')
+   
   },
 };
 </script>

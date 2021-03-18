@@ -5,6 +5,9 @@ import Header from './components/Header/Header.vue'
 import './api'
 import store from './store'
 import Star from './components/Star/Star.vue'
+import './validate.js'
+
+
 
 Vue.component('Header', Header);
 Vue.component('Star', Star)
