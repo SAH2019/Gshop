@@ -32,3 +32,17 @@ export const reqShops = ({ latitude, longitude }) => ajax({
     //     needToken: true
     // }
 })
+
+
+export const reqSendCode = (phone) => ajax.get('/api/sendcode', {
+    params: {
+        phone
+    },
+})
+
+
+export const reqPwdLogin = ({ name, pwd, captcha }) => ajax.post('/api/login_pwd', { name, pwd, captcha })
+    // 手机号验证码等登陆
+export const reqSmsLogin = (phone, code) => ajax.post('/api/login_sms', { phone, code })
+export const reqSessionUser = () => ajax.get('/api/userinfo')
+export const reqLogout = () => ajax.get('/api/logout')

@@ -8,6 +8,8 @@ export default {
     longitude: 113.389954,
     address: {}, //地址信息对象
     categorys: [], // 分类数组
-    shops: [] //商家列表
+    shops: [], //商家列表
+    user: {},
+
 
 }

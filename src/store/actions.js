@@ -1,8 +1,8 @@
 /*
 包含n个间接更新状态数据的方法的对象
 */
-import { reqAddress, reqCategorys, reqShops } from '../api/index'
-import { RECEIVE_ADDRESS, RECEIVE_CATEGORYS, RECEIVE_SHOPS } from './mutation-types'
+import { reqAddress, reqCategorys, reqShops, reqSessionUser, reqLogout } from '../api/index'
+import { RECEIVE_ADDRESS, RECEIVE_CATEGORYS, RECEIVE_SHOPS, RECEIVE_USER, RESET_USER, RECEIVE_USERINFO } from './mutation-types'
 
 export default {
     // 异步获取地址
@@ -23,5 +23,21 @@ export default {
         const { latitude, longitude } = state
         const result = await reqShops({ latitude, longitude })
         commit(RECEIVE_SHOPS, { shops: result.data })
+    },
+    //保存user 的同步action
+    saveUser({ commit }, user) {
+        commit(RECEIVE_USER, user)
+    },
+    //退出登录
+    async logout({ commit }) {
+        const result = await reqLogout()
+        console.log(result)
+        commit(RESET_USER)
+    },
+    async getUserinfo({ commit }) {
+        const result = await reqSessionUser()
+        console.log(result)
+        commit(RECEIVE_USERINFO, result)
+
     }
 }

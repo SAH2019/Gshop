@@ -7,7 +7,7 @@
       </div>
       <div class="shop_container">
         <ul class="shop_list" v-if="shops.length>0">
-          <li class="shop_li border-1px" v-for="(shop,i) in shops" :key="shop.id" >
+          <li class="shop_li border-1px" v-for="(shop,i) in shops" :key="shop.id" @click="$router.push('/shop')" >
             <a>
               <div class="shop_left">
                 <img class="shop_img" :src="'./images/nav/'+(i+1)+'.jpg'" />

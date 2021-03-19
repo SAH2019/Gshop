@@ -5,12 +5,13 @@ import Header from './components/Header/Header.vue'
 import './api'
 import store from './store'
 import Star from './components/Star/Star.vue'
-import './validate.js'
 
+import { Button } from 'mint-ui'
 
 
 Vue.component('Header', Header);
 Vue.component('Star', Star)
+Vue.component(Button.name, Button)
 
 Vue.config.productionTip = false; //去掉控制台打印的提示
 new Vue({

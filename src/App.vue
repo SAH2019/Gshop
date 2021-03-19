@@ -13,6 +13,8 @@ export default {
       
   // 异步获取address
      this.$store.dispatch('getAddress')
+     this.$store.dispatch('getUserinfo')
+
 },
    components:{
         FooterGuide
