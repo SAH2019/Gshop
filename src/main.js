@@ -2,16 +2,17 @@ import Vue from "vue"
 import App from "./App.vue"
 import Router from './router'
 import Header from './components/Header/Header.vue'
-import './api'
 import store from './store'
 import Star from './components/Star/Star.vue'
-
 import { Button } from 'mint-ui'
+import CartControl from './components/CartControl/CartControl.vue'
 
+import './mock/mockServer'
 
 Vue.component('Header', Header);
 Vue.component('Star', Star)
 Vue.component(Button.name, Button)
+Vue.component('CartControl', CartControl)
 
 Vue.config.productionTip = false; //去掉控制台打印的提示
 new Vue({

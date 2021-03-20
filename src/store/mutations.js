@@ -7,13 +7,21 @@ import {
     RECEIVE_ADDRESS,
     RECEIVE_CATEGORYS,
     RECEIVE_SHOPS,
+
     RECEIVE_USER,
     RESET_USER,
     RECEIVE_USERINFO,
-    // LOGOUT
+
+    RECEIVE_GOODS,
+    RECEIVE_RATINGS,
+    RECEIVE_INFO,
+
+    REDUCE_FOOD_COUNT,
+    ADD_FOOD_COUNT
 } from './mutation-types'
 
 export default {
+    //msite7页面的数据
     [RECEIVE_ADDRESS](state, { address }) {
         state.address = address
     },
@@ -23,6 +31,8 @@ export default {
     [RECEIVE_SHOPS](state, { shops }) {
         state.shops = shops
     },
+
+    //用户信息的数据
     [RECEIVE_USER](state, user) {
         state.user = user
     },
@@ -34,8 +44,32 @@ export default {
             state.user = result.data
         }
     },
-    // [LOGOUT](state, result) {
 
-    // },
+    //商家详情的相关数据
+    [RECEIVE_INFO](state, { info }) {
+        state.info = info
+    },
 
+    [RECEIVE_RATINGS](state, { ratings }) {
+        state.ratings = ratings
+    },
+
+    [RECEIVE_GOODS](state, { goods }) {
+        state.goods = goods
+    },
+
+
+
+    [ADD_FOOD_COUNT](state, food) {
+        if (food.count) {
+            food.count++
+        } else {
+            food.count = 1
+        }
+    },
+    [REDUCE_FOOD_COUNT](state, food) {
+        if (food.count > 0) {
+            food.count--
+        }
+    },
 }

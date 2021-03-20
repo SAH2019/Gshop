@@ -13,15 +13,8 @@ export const reqAddress = (jingdu, weidu) => ajax({
     url: `/api/position/${jingdu},${weidu}`
 })
 
-
 // 获取食物的分类列表
 export const reqCategorys = () => ajax.get('/api/index_category')
-
-//根据经纬度获取商铺列表
-
-// reqAddress('23.045278', '113.381944').then((result) => {
-//     console.log(result)
-// })
 
 // 根据经纬度获取商铺列表
 export const reqShops = ({ latitude, longitude }) => ajax({
@@ -32,7 +25,6 @@ export const reqShops = ({ latitude, longitude }) => ajax({
     //     needToken: true
     // }
 })
-
 
 export const reqSendCode = (phone) => ajax.get('/api/sendcode', {
     params: {
@@ -46,3 +38,19 @@ export const reqPwdLogin = ({ name, pwd, captcha }) => ajax.post('/api/login_pwd
 export const reqSmsLogin = (phone, code) => ajax.post('/api/login_sms', { phone, code })
 export const reqSessionUser = () => ajax.get('/api/userinfo')
 export const reqLogout = () => ajax.get('/api/logout')
+
+
+/**
+ * 获取商家信息
+ */
+export const reqShopInfo = () => ajax.post('/info')
+
+/**
+ * 获取商家评价数组
+ */
+export const reqShopRatings = () => ajax.post('/ratings')
+
+/**
+ * 获取商家商品数组
+ */
+export const reqShopGoods = () => ajax.post('/goods')
